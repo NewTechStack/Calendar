@@ -37,9 +37,9 @@ services:
       API_MOD: PROD
       SSO_TOKEN: 5e3480c25a364b1ca85ae6a95ddb716c
       SSO_REGISTRY: 61f64eea-a2f7-49de-87ef-d5e7afc7370f
-      VIRTUAL_HOST: api.calendar.project.eliotctl.fr
+      VIRTUAL_HOST: calendar.eliotctl.fr
       VIRTUAL_PORT: 8080
-      LETSENCRYPT_HOST: api.calendar.project.eliotctl.fr
+      LETSENCRYPT_HOST: calendar.eliotctl.fr
       LETSENCRYPT_EMAIL: eliot.courtel@wanadoo.fr
 
 
