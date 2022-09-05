@@ -2,7 +2,7 @@ version: '3'
 networks:
   proxy:
     external:
-      name: nginx_proxysso
+      name: docker-compose_proxy
   dbnet:
     internal: true
 
