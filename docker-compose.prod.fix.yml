@@ -11,9 +11,12 @@ services:
     build:
       context: ./back/
       dockerfile: Dockerfile.back
-    container_name: back-service_sell
+    container_name: back-calendar
     tty: true
     restart: always
+    depends_on:
+      rethink:
+        condition: "service_started"
     networks:
       - proxy
       - dbnet
@@ -28,55 +31,21 @@ services:
       - ./back/src:/home/api:ro
       - ./source:/source:ro
     environment:
-
-#      API_HOST: 0.0.0.0
-#      API_PORT: 8080
-#      API_WEBA: '*'
-#      API_MOD: DEV
-
-      SSH_USER: ${SSH_USER}
-      SSH_PASSWORD: ${SSH_PASSWORD}
-      SSH_HOST: ${SSH_HOST}
-      SSH_DOMAIN: ${SSH_DOMAIN}
-      SSH_PATH: ${SSH_PATH}
-
-      NDD_URL: ${NDD_URL}
-      NDD_TOKEN: ${NDD_TOKEN}
-      
-      VIRTUAL_HOST: api.launcher.newtechstack.fr
+      API_HOST: 0.0.0.0
+      API_PORT: 8080
+      API_WEBA: '*'
+      API_MOD: PROD
+      SSO_TOKEN: 5e3480c25a364b1ca85ae6a95ddb716c
+      SSO_REGISTRY: 61f64eea-a2f7-49de-87ef-d5e7afc7370f
+      VIRTUAL_HOST: calendar.eliotctl.fr
       VIRTUAL_PORT: 8080
-      LETSENCRYPT_HOST: api.launcher.newtechstack.fr
+      LETSENCRYPT_HOST: calendar.eliotctl.fr
       LETSENCRYPT_EMAIL: eliot.courtel@wanadoo.fr
 
-
-  front:
-    build:
-      context: ./front/
-      dockerfile: Dockerfile.front
-      target: prod
-    container_name: front-service_sell
-    tty: true
-    restart: always
-    networks:
-      - proxy
-    expose:
-      - 80
-    healthcheck:
-      test: exit $$( curl -so /dev/null --fail http://127.0.0.1:80 && echo 0 || echo 1 )
-      interval: 30s
-      timeout: 1s
-      retries: 1
-    volumes:
-      - ./front/prod/:/app:ro
-    environment:
-      VIRTUAL_HOST: launcher.newtechstack.fr, launcher.rocketbonds.fr, launcher.rocketbonds.me
-      VIRTUAL_PORT: 80
-      LETSENCRYPT_HOST: launcher.newtechstack.fr, launcher.rocketbonds.fr, launcher.rocketbonds.me
-      LETSENCRYPT_EMAIL: eliot.courtel@wanadoo.fr
 
   rethink:
     image: rethinkdb:latest
-    container_name: rethink-service_sell
+    container_name: rethink-calendar
     restart: always
     expose:
       - 28015
