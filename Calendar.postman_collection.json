@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "4098ea40-bfed-4009-b7b3-82d5488f05a4",
+		"name": "Calendar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17164081"
+	},
+	"item": [
+		{
+			"name": "/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/sso",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/sso",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/sso/conn/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/sso/conn/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sso",
+						"conn",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/calendars",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "usrtoken",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NjIzMjYzMTMsIm5iZiI6MTY2MjMyNjMxMywiaXNzIjoiYXV0aDpiYWNrIiwiYXVkIjoiYXV0aDo2MWY2NGVlYS1hMmY3LTQ5ZGUtODdlZi1kNWU3YWZjNzM3MGYiLCJwYXlsb2FkIjp7ImlkIjoiYmFhNDRiOWRjYWZlYmRjNGZiZGM1YWU4ZDlhODkwNDYiLCJyb2xlcyI6WyJjcmVhdG9yIl0sInVzZXJuYW1lIjoiRWxpb3QgY3RsIiwiZW1haWwiOiJlbGlvdC5jb3VydGVsQHdhbmFkb28uZnIifSwiZXhwIjoxNjYyOTMxMTEzfQ.HBVLapHJwneG2BgmOMudt6_GF2s5XHVzFrWec-HjndSzOoZrpXxCd9NovpOgZKN61eZixhXtzLuFYQ3UK4Ek3xPsKALAe9R6OnEd3sLCbboVq3Pt-p0AYI1DofautSZ5xqVH455TEBVEcwNxQRVN3JJGDW4QA7NYfuXifvi8i25yO0p-OmJwO7kb4GF9VAL9N6M1PAtpeJ7h7fE2m1eOZmvjxW5yqtlcJSk3LngyT0vldA91lM8Sqpv_q1tMuyP6EV4rdqtFvCEXbmcVZ5CjaXTf7XqVIYr96XMWsD7Ir4iBFqsDePm6k0iaF4DMZYb9uGy-C_-PeRk9FlS60ee6USo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/calendars",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"calendars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/calendar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usrtoken",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NjIzMjYzMTMsIm5iZiI6MTY2MjMyNjMxMywiaXNzIjoiYXV0aDpiYWNrIiwiYXVkIjoiYXV0aDo2MWY2NGVlYS1hMmY3LTQ5ZGUtODdlZi1kNWU3YWZjNzM3MGYiLCJwYXlsb2FkIjp7ImlkIjoiYmFhNDRiOWRjYWZlYmRjNGZiZGM1YWU4ZDlhODkwNDYiLCJyb2xlcyI6WyJjcmVhdG9yIl0sInVzZXJuYW1lIjoiRWxpb3QgY3RsIiwiZW1haWwiOiJlbGlvdC5jb3VydGVsQHdhbmFkb28uZnIifSwiZXhwIjoxNjYyOTMxMTEzfQ.HBVLapHJwneG2BgmOMudt6_GF2s5XHVzFrWec-HjndSzOoZrpXxCd9NovpOgZKN61eZixhXtzLuFYQ3UK4Ek3xPsKALAe9R6OnEd3sLCbboVq3Pt-p0AYI1DofautSZ5xqVH455TEBVEcwNxQRVN3JJGDW4QA7NYfuXifvi8i25yO0p-OmJwO7kb4GF9VAL9N6M1PAtpeJ7h7fE2m1eOZmvjxW5yqtlcJSk3LngyT0vldA91lM8Sqpv_q1tMuyP6EV4rdqtFvCEXbmcVZ5CjaXTf7XqVIYr96XMWsD7Ir4iBFqsDePm6k0iaF4DMZYb9uGy-C_-PeRk9FlS60ee6USo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/calendar",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"calendar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/calendar/{id}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "usrtoken",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NjIzMjYzMTMsIm5iZiI6MTY2MjMyNjMxMywiaXNzIjoiYXV0aDpiYWNrIiwiYXVkIjoiYXV0aDo2MWY2NGVlYS1hMmY3LTQ5ZGUtODdlZi1kNWU3YWZjNzM3MGYiLCJwYXlsb2FkIjp7ImlkIjoiYmFhNDRiOWRjYWZlYmRjNGZiZGM1YWU4ZDlhODkwNDYiLCJyb2xlcyI6WyJjcmVhdG9yIl0sInVzZXJuYW1lIjoiRWxpb3QgY3RsIiwiZW1haWwiOiJlbGlvdC5jb3VydGVsQHdhbmFkb28uZnIifSwiZXhwIjoxNjYyOTMxMTEzfQ.HBVLapHJwneG2BgmOMudt6_GF2s5XHVzFrWec-HjndSzOoZrpXxCd9NovpOgZKN61eZixhXtzLuFYQ3UK4Ek3xPsKALAe9R6OnEd3sLCbboVq3Pt-p0AYI1DofautSZ5xqVH455TEBVEcwNxQRVN3JJGDW4QA7NYfuXifvi8i25yO0p-OmJwO7kb4GF9VAL9N6M1PAtpeJ7h7fE2m1eOZmvjxW5yqtlcJSk3LngyT0vldA91lM8Sqpv_q1tMuyP6EV4rdqtFvCEXbmcVZ5CjaXTf7XqVIYr96XMWsD7Ir4iBFqsDePm6k0iaF4DMZYb9uGy-C_-PeRk9FlS60ee6USo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/calendar/268c1249-3516-4fcf-b70e-d21947c828f6",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"calendar",
+						"268c1249-3516-4fcf-b70e-d21947c828f6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/calendar/{id}",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "usrtoken",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NjIzMjYzMTMsIm5iZiI6MTY2MjMyNjMxMywiaXNzIjoiYXV0aDpiYWNrIiwiYXVkIjoiYXV0aDo2MWY2NGVlYS1hMmY3LTQ5ZGUtODdlZi1kNWU3YWZjNzM3MGYiLCJwYXlsb2FkIjp7ImlkIjoiYmFhNDRiOWRjYWZlYmRjNGZiZGM1YWU4ZDlhODkwNDYiLCJyb2xlcyI6WyJjcmVhdG9yIl0sInVzZXJuYW1lIjoiRWxpb3QgY3RsIiwiZW1haWwiOiJlbGlvdC5jb3VydGVsQHdhbmFkb28uZnIifSwiZXhwIjoxNjYyOTMxMTEzfQ.HBVLapHJwneG2BgmOMudt6_GF2s5XHVzFrWec-HjndSzOoZrpXxCd9NovpOgZKN61eZixhXtzLuFYQ3UK4Ek3xPsKALAe9R6OnEd3sLCbboVq3Pt-p0AYI1DofautSZ5xqVH455TEBVEcwNxQRVN3JJGDW4QA7NYfuXifvi8i25yO0p-OmJwO7kb4GF9VAL9N6M1PAtpeJ7h7fE2m1eOZmvjxW5yqtlcJSk3LngyT0vldA91lM8Sqpv_q1tMuyP6EV4rdqtFvCEXbmcVZ5CjaXTf7XqVIYr96XMWsD7Ir4iBFqsDePm6k0iaF4DMZYb9uGy-C_-PeRk9FlS60ee6USo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"damn\",\r\n    \"options\": {\r\n        \"view\": \"day\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/calendar/268c1249-3516-4fcf-b70e-d21947c828f6",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"calendar",
+						"268c1249-3516-4fcf-b70e-d21947c828f6"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8081"
+		}
+	]
+}
